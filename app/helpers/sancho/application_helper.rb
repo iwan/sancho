@@ -1,5 +1,7 @@
 module Sancho
   module ApplicationHelper
+
+    
     # Public: Pick the correct arguments for form_for when shallow routes 
     # are used.
     #

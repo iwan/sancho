@@ -1,0 +1,98 @@
+.footer {
+    border-top: 1px solid #E5E5E5;
+    margin-top: 45px;
+    padding: 35px 0 36px;
+}
+.table td.right {
+  text-align: right;
+}
+.table th.right {
+  text-align: right;
+}
+
+.lob {
+  font-family: 'Lobster', cursive;
+}
+
+.detail-row {
+  padding-top: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+/*-------*/
+
+$header-lead-color: #92c7f7;
+
+
+body {
+	background: url(sancho/grey_wash_wall_@2X.png) gray;
+}
+.container.theme-showcase {
+	background-color: white;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	-moz-box-shadow: 4px 4px 8px #4c4c4c;
+	box-shadow: 4px 4px 8px #4c4c4c;
+	border-radius: 2px;
+}
+
+.page-header.w-lead {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  
+  p.lead {
+    color: $header-lead-color;
+    margin-bottom: 10px;
+  	font-size: 16px;
+		font-family: 'SourceSansPro', extra-light;
+  }
+  
+  h1 {
+    margin-top: 10px;
+		font-family: 'SourceSansPro', semibold;
+	}
+}
+
+.record-detail {
+	.record-fields {
+		padding-top: 15px;
+/*		border: 1px solid #ccc;*/
+/*		border-radius: 4px;*/
+		
+		dd {
+			margin-bottom: 10px;
+		}
+		
+	}	
+
+	.record-stamps {
+		padding-top: 15px;
+		padding-left: 15px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		background-color: #f8f8f8;
+		
+		dd {
+			margin-bottom: 10px;
+		}
+		
+		dt {
+			color: #aaa;
+		}
+	}
+	
+}
+
+table.table thead tr {
+	background-color: #f8f8f8;
+}
+
+hr.featurette-divider {
+	margin-top: 40px;
+}
+
+.dl-horizontal.buttons {
+	margin-top: 40px;
+}

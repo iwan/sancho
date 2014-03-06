@@ -1,0 +1,6 @@
+.record-stamps
+  %dl.stamps
+    %dt= t('.created_at', default: t('created_at'))
+    %dd= l o.created_at, format: :long
+    %dt= t('.updated_at', default: t('updated_at'))
+    %dd= l o.updated_at, format: :long

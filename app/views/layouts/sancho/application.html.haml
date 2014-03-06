@@ -1,0 +1,20 @@
+!!!
+%html{:lang => I18n.locale}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => HEAD_META_DESCRIPTION, :name => "description"}/
+    %meta{:content => HEAD_META_AUTHOR, :name => "author"}/
+    %link{:href => "../../assets/ico/favicon.ico", :rel => "shortcut icon"}/
+    %title= content_for?(:title) ? yield(:title) : DEFAULT_TITLE
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  %body{:role => "document"}
+    = render 'layouts/navigation' rescue render 'layouts/sancho/navigation' 
+    .container.theme-showcase{:role => "main"}
+      = render 'layouts/messages' rescue render 'layouts/sancho/messages' 
+      = yield
+      = render 'layouts/footer' rescue render 'layouts/sancho/footer' 
