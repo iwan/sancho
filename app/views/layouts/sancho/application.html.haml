@@ -4,10 +4,10 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    %meta{:content => HEAD_META_DESCRIPTION, :name => "description"}/
-    %meta{:content => HEAD_META_AUTHOR, :name => "author"}/
+    %meta{:content => Rails.configuration.head_meta_description, :name => "description"}/
+    %meta{:content => Rails.configuration.head_meta_author, :name => "author"}/
     %link{:href => "../../assets/ico/favicon.ico", :rel => "shortcut icon"}/
-    %title= content_for?(:title) ? yield(:title) : DEFAULT_TITLE
+    %title= content_for?(:title) ? yield(:title) : Rails.configuration.default_title
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags

@@ -15,6 +15,8 @@
  *= require sancho/datepicker3
  *= require sancho/sancho
 
+ *= require font-awesome
+
  *= require_self
  *= require_tree .
  */

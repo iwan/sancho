@@ -2,6 +2,14 @@ module Sancho
   module ApplicationHelper
 
     
+    def bool_to_icon(v)
+      if v
+        fa_icon "check", :style => "color: green;"
+      else
+        fa_icon "times", :style => "color: red;"
+      end
+    end
+
     # Public: Pick the correct arguments for form_for when shallow routes 
     # are used.
     #

@@ -12,3 +12,8 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+# gem 'i18n-tasks', '~> 0.2.10' # fetch missing translations https://github.com/glebm/i18n-tasks
+# gem 'google-translate'
+# gem 'haml-rails'
+# gem 'font-awesome-sass'
