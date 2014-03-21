@@ -12,7 +12,7 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
-  %body{:role => "document"}
+  %body{:role => "document", :'data-controller' => "#{controller.controller_path}", :'data-action' => "#{controller.action_name}"}
     = render 'layouts/navigation' rescue render 'layouts/sancho/navigation' 
     .container.theme-showcase{:role => "main"}
       = render 'layouts/messages' rescue render 'layouts/sancho/messages' 

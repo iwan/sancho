@@ -17,3 +17,4 @@ gemspec
 # gem 'google-translate'
 # gem 'haml-rails'
 # gem 'font-awesome-sass'
+# gem 'jquery-turbolinks'

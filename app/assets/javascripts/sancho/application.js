@@ -12,6 +12,8 @@
 //
 
 //= require jquery
+//= require sancho/jquery.turbolinks
+//  require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap

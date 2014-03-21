@@ -1,0 +1,1 @@
+# Rails.application.config.assets.paths << Rails.root.join("vendor", "bundle", "gems", "jquery-turbolinks-2.0.2", "src").to_s
