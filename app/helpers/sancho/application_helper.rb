@@ -1,6 +1,13 @@
 module Sancho
   module ApplicationHelper
 
+    def try_render(first_render, rescue_render)
+      begin
+        render first_render
+      rescue ActionView::MissingTemplate
+        render rescue_render
+      end
+    end
     
     def bool_to_icon(v)
       if v

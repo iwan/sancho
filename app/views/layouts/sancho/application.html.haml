@@ -13,8 +13,8 @@
     = csrf_meta_tags
 
   %body{:role => "document", :'data-controller' => "#{controller.controller_path}", :'data-action' => "#{controller.action_name}"}
-    = render 'layouts/navigation' rescue render 'layouts/sancho/navigation' 
+    = try_render('layouts/navigation', 'layouts/sancho/navigation')
     .container.theme-showcase{:role => "main"}
-      = render 'layouts/messages' rescue render 'layouts/sancho/messages' 
+      = try_render('layouts/messages', 'layouts/sancho/messages')
       = yield
-      = render 'layouts/footer' rescue render 'layouts/sancho/footer' 
+      = try_render('layouts/footer', 'layouts/sancho/footer')
