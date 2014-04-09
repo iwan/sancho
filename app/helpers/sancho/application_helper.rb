@@ -1,6 +1,13 @@
 module Sancho
   module ApplicationHelper
 
+    def truncate_but_tooltip(content, length=32)
+      content_tag(:span, :data => {:toggle => "tooltip", :placement => "top"}, :title => content) do
+        truncate(content, length: length)
+      end
+    end
+
+
     def try_render(first_render, rescue_render)
       begin
         render first_render

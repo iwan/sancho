@@ -16,3 +16,6 @@ $(document).on "page:change", ->
   $("input[required='required']").each ->
     label = $("label[for='" + $(this).attr("id") + "']")
     label.html(label.html()+" *")
+
+$ ->
+  $("[data-toggle=tooltip]").tooltip()
