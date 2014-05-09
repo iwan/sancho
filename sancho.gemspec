@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.1.0"
-  s.add_dependency 'i18n-tasks', '~> 0.2.10' # fetch missing translations https://github.com/glebm/i18n-tasks
+  # s.add_dependency 'i18n-tasks', '~> 0.2.10' # fetch missing translations https://github.com/glebm/i18n-tasks
+  s.add_dependency 'i18n-tasks', '~> 0.3.0' # fetch missing translations https://github.com/glebm/i18n-tasks
   s.add_dependency "google-translate", "~> 1.0.1"
   s.add_dependency "haml-rails"
   s.add_dependency "font-awesome-rails"
