@@ -9,7 +9,6 @@
     = favicon_link_tag 'favicon.ico'
     %title= content_for?(:title) ? yield(:title) : Rails.configuration.default_title
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
   %body{:role => "document", :'data-controller' => "#{controller.controller_path}", :'data-action' => "#{controller.action_name}"}
@@ -18,3 +17,5 @@
       = try_render('layouts/messages', 'layouts/sancho/messages')
       = yield
       = try_render('layouts/footer', 'layouts/sancho/footer')
+    
+    = javascript_include_tag "application", "data-turbolinks-track" => true
