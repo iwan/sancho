@@ -15,7 +15,9 @@ $(document).on "page:change", ->
   # add asterisk to label when the field is required
   $("input[required='required']").each ->
     label = $("label[for='" + $(this).attr("id") + "']")
-    label.html(label.html()+" *")
+    l = label.html()
+    if l[l.length-1]!="*"
+      label.html(l+" *")
 
 $ ->
   $("[data-toggle=tooltip]").tooltip()
