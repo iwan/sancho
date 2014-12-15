@@ -11,6 +11,7 @@
 // about supported directives.
 //
 
+
 //= require jquery
 //= require sancho/jquery.turbolinks
 //  require jquery.turbolinks
@@ -19,5 +20,7 @@
 //= require bootstrap
 //= require sancho/bootstrap-datepicker
 //= require sancho/sancho
+//  require sancho
 
 //  require_tree .
+

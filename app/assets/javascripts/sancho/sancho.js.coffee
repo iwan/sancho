@@ -4,20 +4,35 @@
 #     startDate: '-3d'
 # })
 
+Sancho = 
+  requred_field_sign: "*"
 
-$(document).on "page:change", ->
 
+sancho_ready = ->
   $('.datepicker').datepicker({
     format: 'yyyy-mm-dd',
     lang: $('html').attr('lang')
   })
 
+  add_sign_for_required_field = (el) ->
+    label = $("label[for='" + $(el).attr("id") + "']")
+    l = label.html()
+    if l[l.length-1]!=Sancho.requred_field_sign
+      label.html(l+" "+Sancho.requred_field_sign)
+
   # add asterisk to label when the field is required
   $("input[required='required']").each ->
-    label = $("label[for='" + $(this).attr("id") + "']")
-    l = label.html()
-    if l[l.length-1]!="*"
-      label.html(l+" *")
+    add_sign_for_required_field(this)
+
+  $("textarea[required='required']").each ->
+    add_sign_for_required_field(this)
+
+
+
+
+$(document).ready(sancho_ready)
+
 
 $ ->
   $("[data-toggle=tooltip]").tooltip()
+
