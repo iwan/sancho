@@ -1,6 +1,6 @@
 .record-stamps
   %dl.stamps
     %dt= t('.created_at', default: t('created_at'))
-    %dd= l o.created_at, format: :long
+    %dd= l(o.created_at, format: :long) if o.created_at
     %dt= t('.updated_at', default: t('updated_at'))
-    %dd= l o.updated_at, format: :long
+    %dd= l(o.updated_at, format: :long) if o.updated_at
