@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-ENV['say'] =  'true'
-
-load File.dirname(__FILE__) + '/translate'
