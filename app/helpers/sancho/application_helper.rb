@@ -40,7 +40,7 @@ module Sancho
         content_tag(:div, :class => 'row') do
           content_tag(:div, :class => 'col-md-6 col-md-offset-3') do
             content_tag(:div, :id => 'error_explanation', :class => "alert alert-danger") do
-              "#{pluralize(model.errors.count, "error")} prohibited this project from being saved:".html_safe +
+              "#{pluralize(model.errors.count, "error")} prohibited this record from being saved:".html_safe +
               tag(:br)+
               content_tag(:ul) {
                 model.errors.full_messages.reduce(''){|c, msg| c << content_tag(:li, msg) }.html_safe
