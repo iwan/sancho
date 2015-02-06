@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+
+require 'i18n/tasks'
+require 'i18n/tasks/commands'
+require 'slop'
+
+err = proc { |message, exit_code|
+  STDERR.puts Term::ANSIColor.yellow('i18n-tasks: ' + message)
+  exit exit_code
+}
+
+command = nil
+begin
+  slop = Slop.parse(help: true) do
+    on('-v', '--version', 'Print the version') {
+      puts I18n::Tasks::VERSION
+      exit
+    }
+    ::I18n::Tasks::Commands.cmds.each do |name, attr|
+      command name.tr('_', '-') do
+        description attr.desc if attr.desc
+        instance_exec(&attr.opts) if attr.opts
+        run do |opts, args|
+          command = [name, opts, args]
+        end
+      end
+    end
+  end
+rescue Slop::Error => e
+  err.call(e.message, 64)
+end
+
+if command
+  cmd  = ::I18n::Tasks::Commands.new
+  meth = command[0]
+  opts = command[1].to_hash.reject { |k, v| v.nil? }
+  args = command[2]
+  begin
+    if opts.empty? && args.empty?
+      cmd.log_verbose "run #{meth.tr('_', '-')} without arguments"
+      cmd.send meth
+    else
+      opts = opts.merge(arguments: args) unless args.empty?
+      cmd.log_verbose "run #{meth.tr('_', '-')} with #{opts.map { |k, v| "#{k}=#{v}" } * ' '}"
+      cmd.send meth, opts
+    end
+  rescue Errno::EPIPE
+    # ignore Errno::EPIPE which is throw when pipe breaks, e.g.:
+    # i18n-tasks missing | head
+  end
+else
+  err.call("Command unknown: #{ARGV[0]}", 64) if ARGV[0]
+end
