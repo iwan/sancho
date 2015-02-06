@@ -13,6 +13,7 @@
 
 
 //= require jquery
+//= require bootstrap-sprockets
 //= require sancho/jquery.turbolinks
 //  require jquery.turbolinks
 //= require jquery_ujs
