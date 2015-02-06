@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
 
- *= require sancho/first
  *= require sancho/framework_and_overrides
  *= require sancho/theme
  *= require source-sans-pro
