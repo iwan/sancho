@@ -27,6 +27,9 @@ sancho_ready = ->
   $("textarea[required='required']").each ->
     add_sign_for_required_field(this)
 
+  $("select[required='required']").each ->
+    add_sign_for_required_field(this)
+
 
 
 
