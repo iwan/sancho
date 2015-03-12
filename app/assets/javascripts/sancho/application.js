@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery.turbolinks
+//  require sancho/jquery.turbolinks  ??? questo o quello sopra???
 //= require jquery_ujs
 
 //= require bootstrap-sprockets
@@ -10,6 +11,5 @@
 //= require turbolinks
 
 
-//  require sancho/jquery.turbolinks
 
 

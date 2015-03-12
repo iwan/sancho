@@ -8,7 +8,15 @@ Sancho =
   requred_field_sign: "*"
 
 
-sancho_ready = ->
+$ ->
+  $(".dropdown-toggle").dropdown()
+
+  $("[data-toggle=tooltip]").tooltip()
+
+  $("a.open-in-new-tab").click ->
+    window.open(this.href)
+    false
+
   $('.datepicker').datepicker({
     format: 'yyyy-mm-dd',
     lang: $('html').attr('lang')
@@ -32,10 +40,4 @@ sancho_ready = ->
 
 
 
-
-$(document).ready(sancho_ready)
-
-
-$ ->
-  $("[data-toggle=tooltip]").tooltip()
 
