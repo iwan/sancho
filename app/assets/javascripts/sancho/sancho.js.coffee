@@ -5,7 +5,28 @@
 # })
 
 
-$(document).on "page:change", ->
+# $(document).on "page:change", ->
+
+#   $('.datepicker').datepicker({
+#     format: 'yyyy-mm-dd',
+#     lang: $('html').attr('lang')
+#   })
+
+#   # add asterisk to label when the field is required
+#   $("input[required='required']").each ->
+#     label = $("label[for='" + $(this).attr("id") + "']")
+#     l = label.html()
+#     if l[l.length-1]!="*"
+#       label.html(l+" *")
+
+$ ->
+  $(".dropdown-toggle").dropdown()
+
+  $("[data-toggle=tooltip]").tooltip()
+
+  $("a.open-in-new-tab").click ->
+    window.open(this.href)
+    false
 
   $('.datepicker').datepicker({
     format: 'yyyy-mm-dd',
@@ -19,5 +40,3 @@ $(document).on "page:change", ->
     if l[l.length-1]!="*"
       label.html(l+" *")
 
-$ ->
-  $("[data-toggle=tooltip]").tooltip()
