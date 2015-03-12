@@ -5,20 +5,6 @@
 # })
 
 
-# $(document).on "page:change", ->
-
-#   $('.datepicker').datepicker({
-#     format: 'yyyy-mm-dd',
-#     lang: $('html').attr('lang')
-#   })
-
-#   # add asterisk to label when the field is required
-#   $("input[required='required']").each ->
-#     label = $("label[for='" + $(this).attr("id") + "']")
-#     l = label.html()
-#     if l[l.length-1]!="*"
-#       label.html(l+" *")
-
 $ ->
   $(".dropdown-toggle").dropdown()
 
@@ -34,9 +20,17 @@ $ ->
   })
 
   # add asterisk to label when the field is required
-  $("input[required='required']").each ->
-    label = $("label[for='" + $(this).attr("id") + "']")
+  add_sign_for_required_field = (el) ->
+    label = $("label[for='" + $(el).attr("id") + "']")
     l = label.html()
-    if l[l.length-1]!="*"
-      label.html(l+" *")
+    if l[l.length-1]!=Sancho.requred_field_sign
+      label.html(l+" "+Sancho.requred_field_sign)
 
+  $("input[required='required']").each ->
+    add_sign_for_required_field(this)
+
+  $("textarea[required='required']").each ->
+    add_sign_for_required_field(this)
+
+  $("select[required='required']").each ->
+    add_sign_for_required_field(this)
