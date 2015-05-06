@@ -4,7 +4,9 @@
 #     startDate: '-3d'
 # })
 
-
+Sancho = 
+  requred_field_sign: "*"
+  
 $ ->
   $(".dropdown-toggle").dropdown()
 
