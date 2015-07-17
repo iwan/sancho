@@ -25,7 +25,7 @@ $ ->
   add_sign_for_required_field = (el) ->
     label = $("label[for='" + $(el).attr("id") + "']")
     l = label.html()
-    if l[l.length-1]!=Sancho.requred_field_sign
+    if l && l[l.length-1]!=Sancho.requred_field_sign
       label.html(l+" "+Sancho.requred_field_sign)
 
   $("input[required='required']").each ->
