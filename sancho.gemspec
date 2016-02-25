@@ -22,7 +22,8 @@ Gem::Specification.new do |s|
   s.add_dependency "turbolinks"
 
   # s.add_dependency 'i18n-tasks', '~> 0.2.10' # fetch missing translations https://github.com/glebm/i18n-tasks
-  s.add_dependency 'i18n-tasks', '~> 0.4.0' # fetch missing translations https://github.com/glebm/i18n-tasks
+  s.add_dependency 'i18n-tasks', '~> 0.9.4' # fetch missing translations https://github.com/glebm/i18n-tasks
+  # s.add_dependency 'i18n-tasks', '~> 0.4.0' # fetch missing translations https://github.com/glebm/i18n-tasks
   s.add_dependency "google-translate", "~> 1.0.1"
   s.add_dependency "haml-rails"
   s.add_dependency "font-awesome-rails"
