@@ -45,7 +45,7 @@ class LocalizeGenerator < Rails::Generators::NamedBase
     @google_translator = GoogleTranslate.new
 
     I18n.available_locales.each do |locale|
-      @loc = locale.to_s
+      @locale = locale.to_s
       template "model.rb", "config/locales/models/#{file_name}/#{locale}.yml"
       template "view.rb", "config/locales/views/#{plural_name}/#{locale}.yml"
     end
