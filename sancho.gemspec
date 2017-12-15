@@ -16,19 +16,13 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  # s.add_dependency "rails", "~> 4.0"
-  s.add_dependency "rails", "~> 4.2.0"
+  s.add_dependency "rails", "~> 4.2.10"
   s.add_dependency "jquery-rails"
   s.add_dependency "turbolinks"
 
-  # s.add_dependency 'i18n-tasks', '~> 0.2.10' # fetch missing translations https://github.com/glebm/i18n-tasks
-  s.add_dependency 'i18n-tasks', '~> 0.9.4' # fetch missing translations https://github.com/glebm/i18n-tasks
-  # s.add_dependency 'i18n-tasks', '~> 0.4.0' # fetch missing translations https://github.com/glebm/i18n-tasks
-  s.add_dependency "google-translate", "~> 1.0.1"
+  s.add_dependency 'i18n-tasks', '~> 0.9.19' # fetch missing translations https://github.com/glebm/i18n-tasks
+  s.add_dependency "google-translate", "~> 1.1.3"
   s.add_dependency "haml-rails"
   s.add_dependency "font-awesome-rails"
-  s.add_dependency "jquery-turbolinks" # you have to require 'jquery-turbolinks' in target Gemfile
-
-
-  # s.add_development_dependency "sqlite3"
+  # s.add_dependency "jquery-turbolinks" # you have to require 'jquery-turbolinks' in target Gemfile
 end
