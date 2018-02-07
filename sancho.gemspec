@@ -24,5 +24,6 @@ Gem::Specification.new do |s|
   s.add_dependency "google-translate", "~> 1.1.3"
   s.add_dependency "haml-rails"
   s.add_dependency "font-awesome-rails"
+  s.add_dependency "bootstrap-sass", "~> 3.3.1"
   # s.add_dependency "jquery-turbolinks" # you have to require 'jquery-turbolinks' in target Gemfile
 end

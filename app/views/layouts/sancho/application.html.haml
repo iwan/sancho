@@ -12,11 +12,10 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
-  %body{:role => "document", :'data-controller' => "#{controller.controller_path}", :'data-action' => "#{controller.action_name}"}
+  %body{:role => "document", :'data-controller' => "#{controller_name}", :'data-action' => "#{action_name}"}
     = try_render('layouts/navigation', 'layouts/sancho/navigation')
     .container.theme-showcase{:role => "main"}
       = try_render('layouts/messages', 'layouts/sancho/messages')
       = yield
       = try_render('layouts/footer', 'layouts/sancho/footer')
     .body-bottom
-    
