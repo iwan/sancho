@@ -8,7 +8,6 @@ Sancho =
   requred_field_sign: "*"
 
 $(document).on("turbolinks:load", ->
-  
   $(".dropdown-toggle").dropdown()
 
   $("[data-toggle=tooltip]").tooltip()
@@ -37,3 +36,4 @@ $(document).on("turbolinks:load", ->
 
   $("select[required='required']").each ->
     add_sign_for_required_field(this)
+)
