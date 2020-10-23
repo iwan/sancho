@@ -15,7 +15,7 @@ module Sancho
         render rescue_render
       end
     end
-    
+
     def bool_to_icon(v)
       if v
         fa_icon "check", :style => "color: green;"
@@ -24,7 +24,7 @@ module Sancho
       end
     end
 
-    # Public: Pick the correct arguments for form_for when shallow routes 
+    # Public: Pick the correct arguments for form_for when shallow routes
     # are used.
     #
     # parent - The Resource that has_* child
@@ -62,13 +62,13 @@ module Sancho
 
     def default_btn_options(action)
       kind = ["btn"] << (action==:destroy ? "btn-danger": "btn-default")
-      { 
+      {
         :button => :mini,
         :kind => kind,
         :label => t(".#{action}", :default => t("helpers.links.#{action}")) # 'en.projects.show.index', def: 'helpers.links.show'
       }
     end
-    
+
     def link_to_show(object, path, options={})
       options.reverse_merge!(default_btn_options(:show))
       build_link(object, path, :show, options)
@@ -82,7 +82,7 @@ module Sancho
     def build_link(object, path, action, options)
       link_opts = { :class => build_btn_class(options) }
       link_opts.merge!({:method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }}) if action==:destroy
-      if can? action, object
+      if policy(object).send("#{action}?") # can? action, object
         if options[:glyphicon]
           link_to content_tag(:span, nil, :class => "glyphicon glyphicon-#{options[:glyphicon]}")+" "+options[:label], path, link_opts
         else
@@ -116,11 +116,6 @@ module Sancho
     def link_to_destroy(object, path, options={})
       options.reverse_merge!(default_btn_options(:destroy))
       build_link(object, path, :destroy, options)
-      # if can? :destroy, object
-      #   link_to options[:label], path, :method => "delete", 
-      #     :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, 
-      #     :class => build_btn_class(options)
-      # end
     end
 
     def rails_main_vers

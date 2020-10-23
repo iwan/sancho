@@ -1,5 +1,5 @@
 //= require jquery
-//= require sancho/jquery.turbolinks
+//  require sancho/jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
 //= require sancho/bootstrap-datepicker
