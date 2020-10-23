@@ -5,7 +5,7 @@
 # })
 
 Sancho =
-  requred_field_sign: "*"
+  required_field_sign: "*"
 
 $ ->
   $(".dropdown-toggle").dropdown()
@@ -24,15 +24,15 @@ $ ->
   add_sign_for_required_field = (el) ->
     label = $("label[for='" + $(el).attr("id") + "']")
     l = label.html()
-    if l && l[l.length-1]!=Sancho.requred_field_sign
-      label.html(l+" "+Sancho.requred_field_sign)
+    if l && l[l.length-1]!=Sancho.required_field_sign
+      label.html(l+" "+Sancho.required_field_sign)
 
   # add asterisk to label when the field is required
   add_sign_for_required_field = (el) ->
     label = $("label[for='" + $(el).attr("id") + "']")
     l = label.html()
-    if l? && l[l.length-1]!=Sancho.requred_field_sign
-      label.html(l+" "+Sancho.requred_field_sign)
+    if l? && l[l.length-1]!=Sancho.required_field_sign
+      label.html(l+" "+Sancho.required_field_sign)
 
   $("input[required='required']").each ->
     add_sign_for_required_field(this)

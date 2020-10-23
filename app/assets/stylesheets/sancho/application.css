@@ -12,7 +12,7 @@
  *= require sancho/framework_and_overrides
  *= require sancho/theme
  *= require source-sans-pro
- *= require sancho/datepicker3
+ *= require sancho/bootstrap-datepicker3.standalone
  *= require sancho/sancho
 
  *= require font-awesome
