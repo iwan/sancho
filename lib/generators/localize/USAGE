@@ -3,6 +3,9 @@ Description:
 
 Example:
     rails generate localize Thing
+     or
+
+    rails generate localize Namespace::Thing
 
     This will create:
         what/will/it/create

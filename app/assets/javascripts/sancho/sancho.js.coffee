@@ -4,9 +4,9 @@
 #     startDate: '-3d'
 # })
 
-Sancho = 
+Sancho =
   requred_field_sign: "*"
-  
+
 $ ->
   $(".dropdown-toggle").dropdown()
 
@@ -20,6 +20,12 @@ $ ->
     format: 'yyyy-mm-dd',
     lang: $('html').attr('lang')
   })
+
+  add_sign_for_required_field = (el) ->
+    label = $("label[for='" + $(el).attr("id") + "']")
+    l = label.html()
+    if l && l[l.length-1]!=Sancho.requred_field_sign
+      label.html(l+" "+Sancho.requred_field_sign)
 
   # add asterisk to label when the field is required
   add_sign_for_required_field = (el) ->
