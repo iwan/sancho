@@ -7,7 +7,8 @@
 Sancho =
   required_field_sign: "*"
 
-$ ->
+# $ ->
+$(document).on "turbolinks:load", ->
   $(".dropdown-toggle").dropdown()
 
   $("[data-toggle=tooltip]").tooltip()
